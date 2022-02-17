@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>机票大数据分析</title>
+  <meta content="" name="descriptison">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="../static/images/favicon.png" rel="icon">
+  <link href="../static/images/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="../static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../static/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../static/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="../static/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../static/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="container">
+
+      <div class="logo float-left">
+        <h1 class="text-light"><a href="temp.html"><span>大数据组</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="temp.html"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+      </div>
+
+      <nav class="nav-menu float-right d-none d-lg-block">
+        <ul>
+          <li class="active"><a href="/index">首页<i class="la la-angle-down"></i></a></li>
+                <li><a  href="/arrive/info">西安前往全国热门城市</a></li>
+          <li><a  href="/leave/info">全国热门城市返回西安</a></li>
+                        <li><a href="/recommend">机票推荐</a> </li>
+          <li><a href="/team">团队</a></li>
+
+        </ul>
+      </nav><!-- .nav-menu -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Ticket Section ======= -->
+    <section id="ticket" class="ticket">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>2月12日-21日从全国热门城市至西安机票信息</h2>
+        </div>
+
+        <!-- ======= Info Section ======= -->
+    <section class="counts section-bg">
+      <div class="container">
+
+          <table class="table table-striped">
+
+              <tr>
+                  <td>起点</td>
+                  <td>终点</td>
+                  <td>日期</td>
+                  <td>航空公司</td>
+                  <td>飞机机型</td>
+                  <td>起飞时间</td>
+                  <td>起飞机场</td>
+                  <td>飞行方式</td>
+                  <td>到达时间</td>
+                  <td>到达机场</td>
+                  <td>准点率</td>
+                  <td>最低价格</td>
+              </tr>
+
+              {% for ticket in tickets %}
+              <tr>
+                  <td>{{ticket.departure}}</td>
+                  <td>{{ticket.destination}}</td>
+                  <td>{{ticket.date}}</td>
+                  <td>{{ticket.company}}</td>
+                  <td>{{ticket.model}}</td>
+                  <td>{{ticket.leaveTime}}</td>
+                  <td>{{ticket.leavePort}}</td>
+                  <td>{{ticket.way}}</td>
+                  <td>{{ticket.arriveTime}}</td>
+                  <td>{{ticket.arrivePort}}</td>
+                  <td>{{ticket.punctualRate}}</td>
+                  <td>{{ticket.lowestPrice}}</td>
+              </tr>
+              {% endfor %}
+
+
+
+          </table>
+
+
+        </div>
+
+
+    </section><!-- End Info Section -->
+
+      </div>
+    </section><!-- End Ticket Section -->
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>大数据组</span></strong>. All Rights Reserved
+      </div>
+
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/vendor/jquery/jquery.min.js"></script>
+  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="../static/vendor/jquery-sticky/jquery.sticky.js"></script>
+  <script src="../static/vendor/venobox/venobox.min.js"></script>
+  <script src="../static/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="../static/vendor/counterup/counterup.min.js"></script>
+  <script src="../static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../static/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../static/js/main.js"></script>
+
+</body>
+
+</html>

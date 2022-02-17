@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>推荐页面</title>
+    <meta content="" name="descriptison">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="../static/images/favicon.png" rel="icon">
+    <link href="../static/images/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900"
+          rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../static/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="../static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../static/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="../static/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="../static/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="../static/css/style.css" rel="stylesheet">
+
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+</head>
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header">
+    <div class="container">
+
+        <div class="logo float-left">
+            <h1 class="text-light"><a href="temp.html"><span>大数据组</span></a></h1>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="temp.html"><img src="static/assets/img/logo.png" alt="" class="img-fluid"></a>-->
+        </div>
+
+        <nav class="nav-menu float-right d-none d-lg-block">
+            <ul>
+                <li class="active"><a href="/index">首页<i class="la la-angle-down"></i></a></li>
+                <li><a href="/arrive/info">西安前往全国热门城市</a></li>
+                <li><a href="/leave/info">全国热门城市返回西安</a></li>
+                <li><a href="/recommend">机票推荐</a></li>
+                <li><a href="/team">团队</a></li>
+
+            </ul>
+        </nav><!-- .nav-menu -->
+
+    </div>
+</header><!-- End Header -->
+
+<!-- ======= Recommend Section ======= -->
+<section id="recommend" class="recommend">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>往返西安意向航班信息</h2>
+            <form id="leaveForm">
+                <label>
+                    起点：
+                    <select name="leave">
+                        <option value="西安">西安</option>
+                        <option value="北京" selected>北京</option>
+                        <option value="上海">上海</option>
+                        <option value="广州">广州</option>
+                        <option value="深圳">深圳</option>
+                        <option value="昆明">昆明</option>
+                        <option value="成都">成都</option>
+                        <option value="重庆">重庆</option>
+                        <option value="郑州">郑州</option>
+                        <option value="杭州">杭州</option>
+                        <option value="三亚">三亚</option>
+                        <option value="武汉">武汉</option>
+                        <option value="长沙">长沙</option>
+                        <option value="乌鲁木齐">乌鲁木齐</option>
+                        <option value="贵阳">贵阳</option>
+                        <option value="南京">南京</option>
+                        <option value="海口">海口</option>
+                        <option value="厦门">厦门</option>
+                        <option value="哈尔滨">哈尔滨</option>
+                        <option value="南宁">南宁</option>
+                        <option value="济南">济南</option>
+                        <option value="天津">天津</option>
+                        <option value="大连">大连</option>
+                        <option value="兰州">兰州</option>
+                        <option value="太原">太原</option>
+                        <option value="沈阳">沈阳</option>
+                        <option value="长春">长春</option>
+                        <option value="福州">福州</option>
+                        <option value="丽江">丽江</option>
+                    </select>
+                </label>
+            </form>
+            <form id="arriveForm">
+                <label>
+                    终点：
+                    <select name="arrive">
+                        <option value="西安">西安</option>
+                        <option value="北京">北京</option>
+                        <option value="上海" selected>上海</option>
+                        <option value="广州">广州</option>
+                        <option value="深圳">深圳</option>
+                        <option value="昆明">昆明</option>
+                        <option value="成都">成都</option>
+                        <option value="重庆">重庆</option>
+                        <option value="郑州">郑州</option>
+                        <option value="杭州">杭州</option>
+                        <option value="三亚">三亚</option>
+                        <option value="武汉">武汉</option>
+                        <option value="长沙">长沙</option>
+                        <option value="乌鲁木齐">乌鲁木齐</option>
+                        <option value="贵阳">贵阳</option>
+                        <option value="南京">南京</option>
+                        <option value="海口">海口</option>
+                        <option value="厦门">厦门</option>
+                        <option value="哈尔滨">哈尔滨</option>
+                        <option value="南宁">南宁</option>
+                        <option value="济南">济南</option>
+                        <option value="天津">天津</option>
+                        <option value="大连">大连</option>
+                        <option value="兰州">兰州</option>
+                        <option value="太原">太原</option>
+                        <option value="沈阳">沈阳</option>
+                        <option value="长春">长春</option>
+                        <option value="福州">福州</option>
+                        <option value="丽江">丽江</option>
+                    </select>
+                </label>
+            </form>
+            <form id="leaveDateForm">
+                <label>
+                    起飞时间：
+                    <select name="leaveTime">
+                        <option value="2月12日" selected>2月12日</option>
+                        <option value="2月13日">2月13日</option>
+                        <option value="2月14日">2月14日</option>
+                        <option value="2月15日">2月15日</option>
+                        <option value="2月16日">2月16日</option>
+                        <option value="2月17日">2月17日</option>
+                        <option value="2月18日">2月18日</option>
+                        <option value="2月19日">2月19日</option>
+                        <option value="2月20日">2月20日</option>
+                        <option value="2月21日">2月21日</option>
+                    </select>
+                </label>
+            </form>
+            <button class="btn btn-info">查询推荐机票</button>
+        </div>
+
+        <!-- ======= Ticket Section ======= -->
+        <section id="ticket" class="ticket">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>推荐机票信息</h2>
+                    <button id="price" class="btn btn-info">价格优先</button>
+                    <button id="punctualRate" class="btn btn-info">准点率优先</button>
+                    <table class="table table-striped">
+                        <tr>
+                            <td>起点</td>
+                            <td>终点</td>
+                            <td>日期</td>
+                            <td>航空公司</td>
+                            <td>飞机机型</td>
+                            <td>起飞时间</td>
+                            <td>起飞机场</td>
+                            <td>飞行方式</td>
+                            <td>到达时间</td>
+                            <td>到达机场</td>
+                            <td>准点率</td>
+                            <td>最低价格</td>
+                        </tr>
+                    </table>
+
+                    <style>
+                        #result {
+                            border: solid 1px #90b;
+                        }
+                    </style>
+                    <div id="result"></div>
+                </div>
+
+
+                <script>
+                    //获取元素
+                    const selects = document.getElementsByTagName('select');
+                    const result = document.getElementById('result');
+
+                    let table = document.createElement("table");
+                    table.setAttribute("class", "table table-striped"); //设置属性，对齐表格
+                    let tbody = document.createElement("tbody");
+                    tbody.setAttribute("id", "tickets");
+
+                    $('button').eq(0).click(function () {
+                        const leaveValue = selects[0].options[selects[0].selectedIndex].value;
+                        const arriveValue = selects[1].options[selects[1].selectedIndex].value;
+                        const dateValue = selects[2].options[selects[2].selectedIndex].value;
+                        if (leaveValue === arriveValue)
+                            alert("起点和终点不能相同，请重新选择");
+                        else if (leaveValue !== "西安" && arriveValue !== "西安")
+                            alert("起点和终点须有一个为西安，请重新选择");
+                        else
+                            $.ajax({
+                                url: "http://127.0.0.1:6699/recommendInfo",
+                                data: {leave: leaveValue, arrive: arriveValue, leaveDate: dateValue},
+                                type: "POST",
+                                dataType: "json",
+                                success: function (data) {
+                                    result.innerHTML = ""; //清空数据，重新更新
+                                    tbody.innerHTML = "";
+                                    console.log(data);
+                                    for (let i = 0; i < data.length; i++) {
+                                        let tr = document.createElement("tr");
+                                        let td1 = document.createElement("td");
+                                        let td2 = document.createElement("td");
+                                        let td3 = document.createElement("td");
+                                        let td4 = document.createElement("td");
+                                        let td5 = document.createElement("td");
+                                        let td6 = document.createElement("td");
+                                        let td7 = document.createElement("td");
+                                        let td8 = document.createElement("td");
+                                        let td9 = document.createElement("td");
+                                        let td10 = document.createElement("td");
+                                        let td11 = document.createElement("td");
+                                        let td12 = document.createElement("td");
+                                        td1.innerHTML = data[i].起点;
+                                        td2.innerHTML = data[i].终点;
+                                        td3.innerHTML = data[i].日期;
+                                        td4.innerHTML = data[i].航空公司;
+                                        td5.innerHTML = data[i].飞机机型;
+                                        td6.innerHTML = data[i].起飞时间;
+                                        td7.innerHTML = data[i].起飞机场;
+                                        td8.innerHTML = data[i].飞行方式;
+                                        td9.innerHTML = data[i].到达时间;
+                                        td10.innerHTML = data[i].到达机场;
+                                        td11.innerHTML = data[i].准点率;
+                                        td12.innerHTML = data[i].最低价格;
+                                        tr.append(td1);
+                                        tr.append(td2);
+                                        tr.append(td3);
+                                        tr.append(td4);
+                                        tr.append(td5);
+                                        tr.append(td6);
+                                        tr.append(td7);
+                                        tr.append(td8);
+                                        tr.append(td9);
+                                        tr.append(td10);
+                                        tr.append(td11);
+                                        tr.append(td12);
+                                        tbody.append(tr);
+                                    }
+
+
+                                    table.append(tbody);
+                                    result.insertAdjacentElement('beforeend', table);
+                                },
+                                timeout: 5000,
+                                error: function () {
+                                    console.log("出错了");
+                                }
+                            })
+                        console.log(leaveValue + " " + arriveValue + " " + dateValue);
+                    });
+
+                    // //价格升序排列
+                    // $('button').eq(1).click(function () {
+                    //     console.log(rows);
+                    //     for (let i = 0; i < rows.length - 1; i++) {
+                    //         for (let j = i + 1; j < rows.length; j++) {
+                    //             // console.log(parseInt(rows[i].childNodes[11].innerHTML));
+                    //             // console.log(parseInt(rows[j].childNodes[11].innerHTML));
+                    //             if (parseInt(rows[i].childNodes[11].innerHTML) > parseInt(rows[j].childNodes[11].innerHTML)) {
+                    //                 let newNode = document.createElement("tr");
+                    //                 rows[i].parentNode.insertBefore(newNode, rows[j]);
+                    //                 rows[i].parentNode.insertBefore(rows[j], rows[i]);
+                    //                 rows[i].parentNode.insertBefore(rows[i], newNode);
+                    //                 rows[i].parentNode.removeChild(newNode);
+                    //             }
+                    //         }
+                    //     }
+                    // });
+
+                    //准点率降序排列
+                    $('button').eq(2).click(function () {
+                        const leaveValue = selects[0].options[selects[0].selectedIndex].value;
+                        const arriveValue = selects[1].options[selects[1].selectedIndex].value;
+                        const dateValue = selects[2].options[selects[2].selectedIndex].value;
+                        if (leaveValue === arriveValue)
+                            alert("起点和终点不能相同，请重新选择");
+                        else if (leaveValue !== "西安" && arriveValue !== "西安")
+                            alert("起点和终点须有一个为西安，请重新选择");
+                        else
+                            $.ajax({
+                                url: "http://127.0.0.1:6699/recommendPunctualRate",
+                                data: {leave: leaveValue, arrive: arriveValue, leaveDate: dateValue},
+                                type: "POST",
+                                dataType: "json",
+                                success: function (data) {
+                                    result.innerHTML = ""; //清空数据，重新更新
+                                    tbody.innerHTML = "";
+                                    console.log(data);
+
+                                    for (let i = 0; i < data.length; i++) {
+                                        let tr = document.createElement("tr");
+                                        let td1 = document.createElement("td");
+                                        let td2 = document.createElement("td");
+                                        let td3 = document.createElement("td");
+                                        let td4 = document.createElement("td");
+                                        let td5 = document.createElement("td");
+                                        let td6 = document.createElement("td");
+                                        let td7 = document.createElement("td");
+                                        let td8 = document.createElement("td");
+                                        let td9 = document.createElement("td");
+                                        let td10 = document.createElement("td");
+                                        let td11 = document.createElement("td");
+                                        let td12 = document.createElement("td");
+                                        td1.innerHTML = data[i].起点;
+                                        td2.innerHTML = data[i].终点;
+                                        td3.innerHTML = data[i].日期;
+                                        td4.innerHTML = data[i].航空公司;
+                                        td5.innerHTML = data[i].飞机机型;
+                                        td6.innerHTML = data[i].起飞时间;
+                                        td7.innerHTML = data[i].起飞机场;
+                                        td8.innerHTML = data[i].飞行方式;
+                                        td9.innerHTML = data[i].到达时间;
+                                        td10.innerHTML = data[i].到达机场;
+                                        td11.innerHTML = data[i].准点率;
+                                        td12.innerHTML = data[i].最低价格;
+                                        tr.append(td1);
+                                        tr.append(td2);
+                                        tr.append(td3);
+                                        tr.append(td4);
+                                        tr.append(td5);
+                                        tr.append(td6);
+                                        tr.append(td7);
+                                        tr.append(td8);
+                                        tr.append(td9);
+                                        tr.append(td10);
+                                        tr.append(td11);
+                                        tr.append(td12);
+                                        tbody.appendChild(tr);
+                                    }
+                                    table.append(tbody);
+                                    result.insertAdjacentElement('beforeend', table);
+                                },
+                                timeout: 5000,
+                                error: function () {
+                                    console.log("出错了");
+                                }
+                            })
+                    })
+                    ;
+                </script>
+
+                <!-- ======= Footer ======= -->
+                <footer id="footer">
+
+
+                    <div class="container">
+                        <div class="copyright">
+                            &copy; Copyright <strong><span>大数据组</span></strong>. All Rights Reserved
+                        </div>
+
+                    </div>
+                </footer><!-- End Footer -->
+
+                <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+                <!-- Vendor JS Files -->
+                <script src="../static/vendor/jquery/jquery.min.js"></script>
+                <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+                <script src="../static/vendor/jquery.easing/jquery.easing.min.js"></script>
+                <script src="../static/vendor/jquery-sticky/jquery.sticky.js"></script>
+                <script src="../static/vendor/venobox/venobox.min.js"></script>
+                <script src="../static/vendor/waypoints/jquery.waypoints.min.js"></script>
+                <script src="../static/vendor/counterup/counterup.min.js"></script>
+                <script src="../static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+                <script src="../static/vendor/aos/aos.js"></script>
+
+                <!-- Template Main JS File -->
+                <script src="../static/js/main.js"></script>
+
+</body>
+</html>

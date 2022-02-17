@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数据可视化</title>
+    <link rel="stylesheet" href="../static/css/index.css" />
+
+    <!-- Favicons -->
+  <link href="../static/images/favicon.png" rel="icon">
+  <link href="../static/images/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,600,600i,700,700i,900" rel="stylesheet">
+
+<!--  &lt;!&ndash; Vendor CSS Files &ndash;&gt;-->
+<!--  <link href="../static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
+<!--  <link href="../static/vendor/icofont/icofont.min.css" rel="stylesheet">-->
+<!--  <link href="../static/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">-->
+<!--  <link href="../static/vendor/animate.css/animate.min.css" rel="stylesheet">-->
+<!--  <link href="../static/vendor/venobox/venobox.css" rel="stylesheet">-->
+<!--  <link href="../static/vendor/aos/aos.css" rel="stylesheet">-->
+
+  <!-- Template Main CSS File -->
+  <link href="../static/css/style.css" rel="stylesheet">
+
+
+  </head>
+  <body>
+    <!-- 头部 -->
+    <header>
+      <h1>机票大数据分析-ECharts</h1>
+
+      <div class="container">
+
+         <a href="/index.html">首页<i class="la la-angle-down"></i></a>
+          <a  href="/leave/info">西安前往全国热门城市</a>
+          <a  href="/arrive/info">全国热门城市返回西安</a>
+          <a href="/recommend">机票推荐</a>
+          <a href="/team">团队</a>
+
+    </div>
+
+
+      <div class="show-time"></div>
+      <script>
+        var t = null;
+        t = setTimeout(time, 1000); //开始运行
+        function time() {
+          clearTimeout(t); //清除定时器
+          dt = new Date();
+          var y = dt.getFullYear();
+          var mt = dt.getMonth() + 1;
+          var day = dt.getDate();
+          var h = dt.getHours(); //获取时
+          var m = dt.getMinutes(); //获取分
+          var s = dt.getSeconds(); //获取秒
+          document.querySelector(".show-time").innerHTML =
+            "当前时间：" +
+            y +
+            "年" +
+            mt +
+            "月" +
+            day +
+            "日-" +
+            h +
+            "时" +
+            m +
+            "分" +
+            s +
+            "秒";
+          t = setTimeout(time, 1000); //设定定时器，循环运行
+        }
+      </script>
+    </header>
+
+    <!-- 页面主体 -->
+    <section class="mainbox">
+      <!-- 左侧盒子 -->
+      <div class="column">
+        <div class="panel bar">
+          <h2>柱形图-不同航司航班次数TOP</h2>
+          <!-- 图表放置盒子 -->
+          <div class="chart"></div>
+          <!-- 伪元素绘制盒子下边角 -->
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel line">
+          <h2>折线图-不同航司准点率
+            <a class="a-active" href="javascript:;">2020</a>
+            <a href="javascript:;">2021</a>
+          </h2>
+          <div class="chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel pie">
+          <h2>饼形图-机票价格分布</h2>
+          <div class="chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+      <!-- 中间盒子 -->
+      <div class="column">
+        <!-- 头部 no模块 -->
+        <div class="no">
+          <div class="no-hd">
+            <ul>
+              <li>2022-2-12~21</li>
+              <li>8436</li>
+            </ul>
+          </div>
+          <div class="no-bd">
+            <ul>
+              <li>出发日期</li>
+              <li>总航班数</li>
+            </ul>
+          </div>
+        </div>
+        <!-- map模块 -->
+        <div class="map">
+          <div class="map1"></div>
+          <div class="map2"></div>
+          <div class="map3"></div>
+          <div class="chart"></div>
+        </div>
+      </div>
+      <!-- 右侧盒子 -->
+      <div class="column">
+        <div class="panel bar2">
+          <h2>柱形图-飞行时间段</h2>
+          <div class="chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel line2">
+          <h2>折线图-机票价格浮动</h2>
+          <div class="chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel pie2">
+          <h2>饼形图-地区分布</h2>
+          <div class="chart"></div>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+    </section>
+
+    <script src="../static/js/flexible.js"></script>
+    <script src="../static/js/echarts.min.js"></script>
+    <script src="../static/js/jquery.js"></script>
+    <!-- 引入china.js 完成地图模块 -->
+    <script src="../static/js/china.js"></script>
+    <script src="../static/js/index.js"></script>
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>大数据</span></strong>. All Rights Reserved
+      </div>
+
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="../static/vendor/jquery/jquery.min.js"></script>
+  <script src="../static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../static/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="../static/vendor/jquery-sticky/jquery.sticky.js"></script>
+  <script src="../static/vendor/venobox/venobox.min.js"></script>
+  <script src="../static/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="../static/vendor/counterup/counterup.min.js"></script>
+  <script src="../static/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../static/vendor/aos/aos.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../static/js/main.js"></script>
+
+
+
+  </body>
+</html>
