@@ -1,0 +1,12 @@
+VirtualMachine  IP address                  applications
+VM1             192.168.23.136(master)      namenode,master
+VM2             192.168.23.135(slave1)      datanode,database
+VM3             192.168.23.137(slave2)      datanode
+
+
+
+hadoop-2.9.2
+spark-2.4.3
+python 3.6
+VMware pro 15.5
+centOS 7
