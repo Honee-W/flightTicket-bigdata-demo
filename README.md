@@ -25,3 +25,9 @@ show the tickets according to the specific requests
 ![截图2](https://github.com/Honee-W/flightTicket-bigdata-demo/blob/master/screenshots/img2.jpg "截图2")
 ![截图3](https://github.com/Honee-W/flightTicket-bigdata-demo/blob/master/screenshots/img3.jpg "截图3")
 ![截图4](https://github.com/Honee-W/flightTicket-bigdata-demo/blob/master/screenshots/img4.jpg "截图4")
+
+## 基于flask框架的简单大数据项目
+### --- 爬虫获取数据
+### --- spark_rdd处理并写入数据
+### --- 数据存储在mysql
+### --- 运用JS模板对数据进行简单展示
