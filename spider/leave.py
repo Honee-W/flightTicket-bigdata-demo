@@ -9,22 +9,59 @@ import re
 import xlwt,xlrd
 import totalTickets
 from urllib.parse import quote
+from fake_useragent import UserAgent
 
+#IP池
+proxypool_url = 'http://127.0.0.1:5555/random'
 
 def main(url):
     # 特价机票页面：从西安到全国各地
     url = url
     # 添加请求头信息
+    my_headers = [        "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_8; en-us) AppleWebKit/534.50 (KHTML, like Gecko) Version/5.1 Safari/534.50",
+        "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-us) AppleWebKit/534.50 (KHTML, like Gecko) Version/5.1 Safari/534.50",
+        "Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0);",
+        "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/4.0)",
+        "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0)",
+        "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)",
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:2.0.1) Gecko/20100101 Firefox/4.0.1",
+        "Mozilla/5.0 (Windows NT 6.1; rv:2.0.1) Gecko/20100101 Firefox/4.0.1",
+        "Opera/9.80 (Macintosh; Intel Mac OS X 10.6.8; U; en) Presto/2.8.131 Version/11.11",
+        "Opera/9.80 (Windows NT 6.1; U; en) Presto/2.8.131 Version/11.11",
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.56 Safari/535.11",
+        "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Maxthon 2.0)",
+        "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; TencentTraveler 4.0)",
+        "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)",
+        "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; The World)",
+        "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; SE 2.X MetaSr 1.0; SE 2.X MetaSr 1.0; .NET CLR 2.0.50727; SE 2.X MetaSr 1.0)",
+        "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; 360SE)",
+        "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Avant Browser)",
+        "Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)",
+        "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36"
+        "Mozilla/5.0 (X11; Linux x86_64; rv:76.0) Gecko/20100101 Firefox/76.0"]
     headers = {
-         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36 Edg/97.0.1072.55' }
+         # 'User-Agent': random.choice(my_headers)
+        'User-Agent': UserAgent().random
+    }
+
+    proxy = requests.get((proxypool_url)).text
+    print(proxy)
+    proxies = {'http': 'http://'+proxy}
+
     # 发送请求，获得响应
-    r = requests.get(url, headers=headers)
+    r = requests.get(url, headers=headers, proxies=proxies)
+    print(r.status_code)
+    time.sleep(0.1)
     # 解析页面代码
     soup = BeautifulSoup(r.text, 'html.parser')
     infolist = []
     datalist = []
     getInfo(soup,infolist)
     getData(soup,datalist)
+
+    # if (len(datalist) == 0 and trytimes > 0):
+    #     main(url, trytimes-1)
+
     # 保存数据
     savepath = '../data/leave/西安到全国热门城市.xls'
     writeData(infolist, datalist, savepath)
@@ -187,6 +224,7 @@ def writeData(infolist, datalist, savepath):
     open_file = xlrd.open_workbook(savepath)
     table = open_file.sheets()[0]
     print("write....")
+    print(infolist)
     if  table.nrows == 1:
         col = ("id", "departure", "destination", "date", "company", "model", "leaveTime", "leavePort", "way", "arriveTime",
                "arrivePort", "punctualRate", "lowestPrice")
@@ -214,6 +252,7 @@ if __name__ == "__main__":
     urllist = f.readlines()
     for url in urllist:
         ret = quote(url, safe=';/?:@&=+$,', encoding='utf-8') #含中文的url转化成utf-8格式
+        # main(ret, 20)
         main(ret)
         count += 1
         time.sleep(random.randint(1,3))
