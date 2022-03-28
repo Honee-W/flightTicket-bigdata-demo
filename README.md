@@ -11,8 +11,8 @@ use regular expressions to match and collect data from static HTML
 data is stored in CSV and uploaded to remote hdfs
 use spark to read data from hdfs and write into mysql
 
-### data analyzing --- spark
-use rdd to analyse flight ticket information
+### data analyzing --- spark, spark-ml
+use rdd and dataframe to analyse flight ticket information === Regression, Clustering,etc.
 
 ### data visualization --- E-charts
 use JS and templates to show the charts
