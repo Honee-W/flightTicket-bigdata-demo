@@ -1,7 +1,7 @@
-VirtualMachine  IP address                  applications
-VM1             192.168.23.136(master)      namenode,master
-VM2             192.168.23.135(slave1)      datanode,database
-VM3             192.168.23.137(slave2)      datanode
+VirtualMachine  IP address                  Hadoop                                    spark
+VM1             192.168.23.136(master)      namenode,master                          Master
+VM2             192.168.23.135(slave1)      datanode,database,SecondaryNameNode      Worker
+VM3             192.168.23.137(slave2)      datanode                                 Worker
 
 
 
