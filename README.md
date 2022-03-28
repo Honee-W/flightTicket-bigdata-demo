@@ -28,6 +28,6 @@ show the tickets according to the specific requests
 
 ## 基于flask框架的简单大数据项目
 ### --- 爬虫获取数据  （添加IP代理池功能，使用https://github.com/Python3WebSpider/ProxyPool )
-### --- spark_rdd处理并写入数据
+### --- spark_rdd处理并写入数据,应用spark-ml包对数据进行相关性，聚类，回归等分析
 ### --- 数据存储在mysql
 ### --- 运用JS模板对数据进行简单展示
